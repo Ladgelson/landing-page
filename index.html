@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <title>(3) Promoção InfoMimos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script>
+      function add() {
+        const email = document.getElementById('email').value
+        if (isValid(email)) {
+          let emails = localStorage.getItem('emails')
+          if (emails) {
+            emails = JSON.parse(emails)
+            if (emails.includes(email)) {
+              alert('Email já cadastrado')
+            } else {
+              localStorage.setItem('emails', JSON.stringify([...emails, email]))  
+              alert('Email cadastrado!')
+            }
+          } else {
+            localStorage.setItem('emails', JSON.stringify([email]))
+            alert('Email cadastrado!')
+          }
+        } else {
+          alert('Email inválido!')
+        }
+      }
+
+      function isValid(email) {
+        return email && email.length >= 5  && email.includes("@")
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1 style="text-align: center">CASA DOS HEADSETS</h1>
+      <div class="products">
+        <div class="col">
+          <div class="card">
+            <img src="https://img.terabyteshop.com.br/archive/1697104504/headset-gamer-hyperx-cloud-alpha-02.png" style="height: 235px;" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                Headset Vermelho Dubom
+                <span class="badge bg-dark" style="font-size: 10px;">PROMO</span>
+              </h5>
+              <p class="card-text">Fone de ouvido + Microfone da marca mais Dubom possível. É quase como se fosse uma JBL para estudos.</p>
+              <p class="card-text">De: <strong>1.220,50</strong> por: <span class="badge rounded-pill bg-success" style="font-size: 18px;">800,99</span></p>
+              <a href="#" class="btn btn-primary animate__animated animate__infinite animate__pulse">
+                Ver Produto
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="http://www.pngall.com/wp-content/uploads/5/Gaming-Headset-PNG-Image-HD.png" style="height: 235px;" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                Headset X Semi-Kuase-Pro
+                <span class="badge bg-dark" style="font-size: 10px;">PROMO</span>
+              </h5>
+              <p class="card-text">Esse é ideal para você jogar games e se tornar pro player naquele jogo que você perde a paciência quando joga. You know!</p>
+              <p class="card-text">De: <strong>1.410,50</strong> por: <span class="badge rounded-pill bg-success" style="font-size: 18px;">990,99</span></p>
+              <a href="#" class="btn btn-primary animate__animated animate__infinite animate__pulse">Ver Produto</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://lojamultilaser.vteximg.com.br/arquivos/ids/196383-1000-1000/PH244_01.png?v=637548040856100000" style="height: 235px;" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                Blue Galo Campina
+                <span class="badge bg-dark" style="font-size: 10px;">PROMO</span>
+              </h5>
+              <p class="card-text">Esse aqui tem um som meio azulado. Como assim? Não entende como som pode ter cor? Então compre esse fone e entenda!</p>
+              <p class="card-text">De: <strong>2000,50</strong> por: <span class="badge rounded-pill bg-success" style="font-size: 18px;">200,00</span></p>
+              <a href="#" class="btn btn-primary animate__animated animate__infinite animate__pulse">Ver Produto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid background">
+        <div class="row">
+          <div class="col email-subscribe">
+            <span class="landing-title">Não fique de fora!</span>
+            <div class="row">
+              <span class="landing-subtitle">SE INSCREVA PARA NÃO PERDER NENHUMA PROMOÇÃO</span>
+              <span class="landing-description">Seja um dos primeiros a aproveitar essas ofertas imperdiveis antes que acabe!</span>
+            </div>
+            <div class="input-group mb-3">
+              <input id="email" type="text" class="form-control" placeholder="Insira seu e-mail aqui" aria-label="Insira seu e-mail aqui" aria-describedby="basic-addon1">
+              <button type="button" class="btn btn-primary" onclick="add()">Assinar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
